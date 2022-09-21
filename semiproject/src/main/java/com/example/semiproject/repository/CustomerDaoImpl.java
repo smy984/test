@@ -90,4 +90,11 @@ public class CustomerDaoImpl implements CustomerDao{
 		Object[] param = {customerId};
 		return jdbcTemplate.query(sql, customerExtractor, param);
 	}
+	
+	@Override
+	public void updateLogin(String customerId) {
+		String sql = "update customer set customer_login=sysdate where customer_id=?";
+		Object[] param = {customerId};
+		jdbcTemplate.update(sql, param);
+	}
 }

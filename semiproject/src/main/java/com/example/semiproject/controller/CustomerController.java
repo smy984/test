@@ -46,7 +46,15 @@ public class CustomerController {
 			@RequestParam String customerId, 
 			@RequestParam String customerPw, 
 			HttpSession session) {
+		CustomerDto findDto = customerDao.selectOne(customerId);
 		
+		if(findDto != null) {
+			boolean isLogin = findDto.getCustomerPw().equals(customerPw);
+			if(isLogin) {
+				session.setAttribute("loginId", customerId);
+				customerDao.updateLogin(customerId);
+			}
+		}
 		return "redirect:/";
 	}
 }
