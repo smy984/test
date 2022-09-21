@@ -2,6 +2,8 @@ package com.example.semiproject.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.example.semiproject.entity.CustomerDto;
@@ -31,5 +33,61 @@ public class CustomerDaoImpl implements CustomerDao{
 							customerDto.getCustomerEmail()};
 		
 		jdbcTemplate.update(sql, param);
+	}
+
+	private RowMapper<CustomerDto> customerMapper = (rs, idx)->{
+		CustomerDto customerDto = new CustomerDto();
+		customerDto.setCustomerId(rs.getString("customer_id"));
+		customerDto.setCustomerPw(rs.getString("customer_pw"));
+		customerDto.setCustomerPwcheck(rs.getString("customer_pwcheck"));
+		customerDto.setCustomerNick(rs.getString("customer_nick"));
+		customerDto.setCustomerName(rs.getString("customer_name"));
+		customerDto.setCustomerPost(rs.getString("customer_post"));
+		customerDto.setCustomerHost(rs.getString("customer_host"));
+		customerDto.setCustomerDetailHost(rs.getString("customer_detail_host"));
+		customerDto.setCustomerTel(rs.getString("customer_tel"));
+		customerDto.setCustomerPhone(rs.getString("customer_phone"));
+		customerDto.setCustomerBirth(rs.getDate("customer_birth"));
+		customerDto.setCustomerEmail(rs.getString("customer_email"));
+		customerDto.setCustomerPoint(rs.getInt("customer_point"));
+		customerDto.setCustomerMoney(rs.getInt("customer_money"));
+		customerDto.setCustomerGrade(rs.getString("customer_grade"));
+		customerDto.setCustomerJoin(rs.getDate("customer_join"));
+		customerDto.setCustomerLogin(rs.getDate("customer_login"));
+		return customerDto;
+	};
+	
+	private ResultSetExtractor<CustomerDto> customerExtractor = (rs)->{
+		if(rs.next()) {
+			CustomerDto customerDto = new CustomerDto();
+			customerDto.setCustomerId(rs.getString("customer_id"));
+			customerDto.setCustomerPw(rs.getString("customer_pw"));
+			customerDto.setCustomerPwcheck(rs.getString("customer_pwcheck"));
+			customerDto.setCustomerNick(rs.getString("customer_nick"));
+			customerDto.setCustomerName(rs.getString("customer_name"));
+			customerDto.setCustomerPost(rs.getString("customer_post"));
+			customerDto.setCustomerHost(rs.getString("customer_host"));
+			customerDto.setCustomerDetailHost(rs.getString("customer_detail_host"));
+			customerDto.setCustomerTel(rs.getString("customer_tel"));
+			customerDto.setCustomerPhone(rs.getString("customer_phone"));
+			customerDto.setCustomerBirth(rs.getDate("customer_birth"));
+			customerDto.setCustomerEmail(rs.getString("customer_email"));
+			customerDto.setCustomerPoint(rs.getInt("customer_point"));
+			customerDto.setCustomerMoney(rs.getInt("customer_money"));
+			customerDto.setCustomerGrade(rs.getString("customer_grade"));
+			customerDto.setCustomerJoin(rs.getDate("customer_join"));
+			customerDto.setCustomerLogin(rs.getDate("customer_login"));
+			return customerDto;
+		}
+		else {
+			return null;
+		}
+	};
+	
+	@Override
+	public CustomerDto selectOne(String customerId) {
+		String sql = "select * from customer where customer_id=?";
+		Object[] param = {customerId};
+		return jdbcTemplate.query(sql, customerExtractor, param);
 	}
 }

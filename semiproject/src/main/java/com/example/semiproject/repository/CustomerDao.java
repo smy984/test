@@ -7,9 +7,9 @@ import com.example.semiproject.entity.CustomerDto;
 public interface CustomerDao {
 	void insert(CustomerDto customerDto);
 	
+	CustomerDto selectOne(String customerId);
 //	List<CustomerDto> select();
-//	CustomerDto selectOne(String customerId);
-//	
+	
 //	boolean update(CustomerDto customerDto);
 //	boolean delete(String customerId);
 }
