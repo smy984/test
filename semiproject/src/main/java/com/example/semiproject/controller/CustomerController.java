@@ -57,4 +57,10 @@ public class CustomerController {
 		}
 		return "redirect:/";
 	}
+	
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("loginId");
+		return "redirect:login";
+	}
 }
