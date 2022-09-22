@@ -17,7 +17,7 @@
 </head>
 <body>
 <div align="center">
-<h1 align="left"><a href="/">홈</a></h1>
+<h1><a href="/">홈</a></h1>
 
 <h2>
 	<a href="/member/join">회원가입</a>

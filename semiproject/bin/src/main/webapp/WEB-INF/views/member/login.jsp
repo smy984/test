@@ -8,7 +8,7 @@
 
 <br><br>
 <form action="login" method="post">
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
 	<input name="customerId" type="text" required><br><br><br>
 	PASSWORD : <input name="customerPw" type="password" required><br><br><br>
 	<button type="submit">LOGIN</button>
