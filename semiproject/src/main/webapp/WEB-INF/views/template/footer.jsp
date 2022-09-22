@@ -7,7 +7,7 @@
 <div align="center">
 <h1>세미 프로젝트 3조</h1>
 
-session Id : ${loginId}
+로그인 아이디 : ${loginId}
 </div>
 
 </body>
