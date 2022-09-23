@@ -18,7 +18,7 @@ public class CustomerDaoImpl implements CustomerDao{
 	public void insert(CustomerDto customerDto) {
 		String sql = "insert into customer("
 						+ "customer_id, customer_pw, "
-						+ "customer_nick, customer_name, "
+						+ "customer_pwcheck, customer_nick, customer_name, "
 						+ "customer_post, customer_host, "
 						+ "customer_detail_host, customer_tel, "
 						+ "customer_phone, customer_birth, "
