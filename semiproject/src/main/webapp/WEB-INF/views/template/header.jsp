@@ -20,10 +20,21 @@
 <h1 align="left"><a href="/">홈</a></h1>
 
 <h2>
-	<a href="/member/join">회원가입</a>
-	<a href="/member/login">로그인</a>
-	<a href="/member/logout">로그아웃</a>
-	<a href="/member/mypage">마이페이지</a>
+<form action="#" method="#">
+<a href="#">BEST</a>
+<a href="#">NEW 5%</a>
+<a href="#">outer</a>
+<a href="#">top</a>
+<a href="#">pants</a>
+<a href="#">acc</a>
+<a href="/member/join">회원가입</a>
+<a href="/member/login">로그인</a>
+<a href="/member/logout">로그아웃</a>
+<a href="/member/mypage">마이페이지</a>
+	<input>
+	<button>search</button>
+<a href="#">장바구니</a>
+</form>
 	
 </h2>
 </div>
