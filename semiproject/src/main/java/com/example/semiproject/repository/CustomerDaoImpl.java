@@ -23,14 +23,14 @@ public class CustomerDaoImpl implements CustomerDao{
 						+ "customer_detail_host, customer_tel, "
 						+ "customer_phone, customer_birth, "
 						+ "customer_email) values("
-						+ "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+						+ "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 		
 		Object[] param = {customerDto.getCustomerId(), customerDto.getCustomerPw(), 
-							customerDto.getCustomerNick(), customerDto.getCustomerName(), 
-							customerDto.getCustomerPost(), customerDto.getCustomerHost(), 
-							customerDto.getCustomerDetailHost(), customerDto.getCustomerTel(), 
-							customerDto.getCustomerPhone(), customerDto.getCustomerBirth(), 
-							customerDto.getCustomerEmail()};
+							customerDto.getCustomerPwcheck(), customerDto.getCustomerNick(), 
+							customerDto.getCustomerName(), customerDto.getCustomerPost(), 
+							customerDto.getCustomerHost(), customerDto.getCustomerDetailHost(), 
+							customerDto.getCustomerTel(), customerDto.getCustomerPhone(), 
+							customerDto.getCustomerBirth(), customerDto.getCustomerEmail()};
 		
 		jdbcTemplate.update(sql, param);
 	}

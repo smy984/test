@@ -14,25 +14,29 @@
 		<tr>
 			<th align="left">아이디 *</th>
 			<td>
-				<input name="customerId" type="text" required>(영문 소문자/숫자, 5~20자)
+				<input name="customerId" type="text" required 
+							pattern="^[a-z][a-z0-9_-]{4,19}$">(영문 소문자/숫자, 5~20자)
 			</td>
 		</tr>
 		<tr>
 			<th align="left">비밀번호 *</th>
 			<td>
-				<input name="customerPw" type="password" required>(영문 대소문자/숫자/특수[!@#$], 8~26)
+				<input name="customerPw" type="password" required 
+							pattern="^[a-zA-Z0-9!@#$]{8,16}$">(영문 대소문자/숫자/특수[!@#$], 8~26)
 			</td>
 		</tr>
 		<tr>
 			<th align="left">비밀번호 확인 *</th>
 			<td>
-				<input name="customerPwcheck" type="password" required>
+				<input name="customerPwcheck" type="password" required 
+							pattern="^[a-zA-Z0-9!@#$]{8,16}$">
 			</td>
 		</tr>
 		<tr>
 			<th align="left">닉네임 *</th>
 			<td>		
-				<input name="customerNick" type="text" required>
+				<input name="customerNick" type="text" required 
+							pattern="">
 			</td>
 		</tr>
 		<tr>
