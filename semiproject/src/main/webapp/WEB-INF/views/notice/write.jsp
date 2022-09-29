@@ -18,13 +18,14 @@
 		<tr>
 			<th>작성자</th>
 			<td width="40%">
-				<input type="text" name="adimId" value="${loginId}" readonly>
+				<input type="text" name="adminId" value="${loginId}" readonly>
 			</td>	
 		</tr>
 		<tr>
 			<th>글머리</th>
 			<td>
 				<select name="noticeHead">
+					<option value="">-선택-</option>
 					<option>긴급</option>
 					<option>이벤트</option>
 				</select>
@@ -32,7 +33,7 @@
 		<tr>
 			<th height="300">내용</th>
 			<td valign="top">
-				<textarea rows="20" cols="55"></textarea>
+				<textarea name="noticeContent" rows="20" cols="55"></textarea>
 			</td>
 		</tr>
 	</tbody>

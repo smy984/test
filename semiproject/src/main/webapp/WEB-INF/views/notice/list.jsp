@@ -38,7 +38,7 @@
 						<fmt:formatDate var="writeTime" value="${noticeDto.noticeDate}" pattern="yyyy-MM-dd"/>
 						<c:choose>
 						<c:when test="${today == writeTime}">
-							<fmt:formatDate value="${noticeDto.noticeDate}" pattern="hh:mm"/>
+							<fmt:formatDate value="${noticeDto.noticeDate}" pattern="HH:mm"/>
 						</c:when>
 						<c:otherwise>
 							${writeTime}

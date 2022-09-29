@@ -25,7 +25,15 @@
 			<td valign="top" colspan="5">${noticeDto.noticeContent}</td>
 		</tr>
 	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="6" align="right">
+				<a href="list">목록</a>
+				<a href="edit?noticeNo=${noticeDto.noticeNo}">수정</a>
+				<a href="delete?noticeNo=${noticeDto.noticeNo}">삭제</a>
+			</td>
+		</tr>
+	</tfoot>
 </table>
-<a href="list">목록</a>
 
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>

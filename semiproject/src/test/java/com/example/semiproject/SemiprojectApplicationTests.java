@@ -31,7 +31,6 @@ class SemiprojectApplicationTests {
 	
 	@Test
 	void contextLoads() {
-		assertEquals(noticeDao.list().size(), 500);
 	}
 
 }
