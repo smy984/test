@@ -65,8 +65,16 @@
 		<input type="search" name="keyword">
 		<button type="submit">찾기</button>
 	</form>
+
+<!-- 페이징 -->
 	
-&lt; 1 2 3 4 5 &gt;
+&lt;
+ 
+<c:forEach var="i" begin="페이징 첫 번호" end="페이징 끝 번호" step="1">
+	${i} 
+</c:forEach>
+
+&gt;
 
 </div>
 

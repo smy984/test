@@ -52,28 +52,53 @@ public class NoticeDaoImpl implements NoticeDao{
 	@Override
 	public List<NoticeDto> noticeBoard(NoticeListVO noticeListVO) {
 		if(noticeListVO.isSearch()) {
-			return noticeSearch(noticeListVO);
+			return search(noticeListVO);
 		}
 		else {
-			return noticeList(noticeListVO);
+			return list(noticeListVO);
 		}
 	}
 	
 	@Override
-	public List<NoticeDto> noticeList(NoticeListVO noticeListVO) {
+	public List<NoticeDto> list(NoticeListVO noticeListVO) {
 		String sql = "select * from notice order by notice_no desc";
 		
 		return jdbcTemplate.query(sql, noticeMapper);
 	}
 	
 	@Override
-	public List<NoticeDto> noticeSearch(NoticeListVO noticeListVO) {
+	public List<NoticeDto> search(NoticeListVO noticeListVO) {
 		String sql = "select * from notice where instr(#1, ?) > 0 "
 				+ "order by notice_no desc";
 		sql = sql.replace("#1", noticeListVO.getType());
 		Object[] param = {noticeListVO.getKeyword()};
 		
 		return jdbcTemplate.query(sql, noticeMapper, param);
+	}
+	
+	@Override
+	public int count(NoticeListVO noticeListVO) {
+		if(noticeListVO.isSearch()) {
+			return searchCount(noticeListVO);
+		}
+		else {
+			return listCount(noticeListVO);
+		}
+	}
+	
+	@Override
+	public int listCount(NoticeListVO noticeListVO) {
+		String sql = "select count(*) from notice";
+		return jdbcTemplate.queryForObject(sql, int.class);
+	}
+
+	@Override
+	public int searchCount(NoticeListVO noticeListVO) {
+		String sql = "select count(*) from notice "
+				+ "where instr(#1, ?) > 0";
+		sql = sql.replace("#1", noticeListVO.getType());
+		Object[] param = {noticeListVO.getKeyword()};
+		return jdbcTemplate.queryForObject(sql, int.class, param);
 	}
 	
 	private ResultSetExtractor<NoticeDto> noticeExtractor = (rs)->{
@@ -106,7 +131,8 @@ public class NoticeDaoImpl implements NoticeDao{
 		String sql = "update notice set "
 						+ "notice_title=?, "
 						+ "notice_content=?, "
-						+ "notice_head=? "
+						+ "notice_update=sysdate, "
+						+ "notice_head=?, "
 					+ "where notice_no=?";
 		Object[] param = {noticeDto.getNoticeTitle(), noticeDto.getNoticeContent(), 
 							noticeDto.getNoticeHead(), noticeDto.getNoticeNo()};
