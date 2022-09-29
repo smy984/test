@@ -22,7 +22,7 @@
 		</tr>
 		<tr>
 			<th height="300">내용</th>
-			<td colspan="5">${noticeDto.noticeContent}</td>
+			<td valign="top" colspan="5">${noticeDto.noticeContent}</td>
 		</tr>
 	</tbody>
 </table>

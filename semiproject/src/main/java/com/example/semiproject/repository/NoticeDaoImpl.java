@@ -48,6 +48,16 @@ public class NoticeDaoImpl implements NoticeDao{
 		return jdbcTemplate.query(sql, noticeMapper);
 	}
 	
+	@Override
+	public List<NoticeDto> list(String type, String keyword) {
+		String sql = "select * from notice where instr(#1, ?) > 0 "
+				+ "order by notice_no desc";
+		sql = sql.replace("#1", type);
+		Object[] param = {keyword};
+		
+		return jdbcTemplate.query(sql, noticeMapper, param);
+	}
+	
 	private ResultSetExtractor<NoticeDto> noticeExtractor = (rs)->{
 		if(rs.next()) {
 			return NoticeDto.builder()

@@ -7,6 +7,8 @@
 	<jsp:param value="공지사항" name="title"/>
 </jsp:include>
 
+
+
 <div class="container-1200 mt-40">
 
 	<div class="row center">
@@ -30,18 +32,37 @@
 						<a href="detail?noticeNo=${noticeDto.noticeNo}">${noticeDto.noticeTitle}</a>
 					</td>
 					<td>${noticeDto.adminId}</td>
-					<td>${noticeDto.noticeDate}</td>
+					<td>
+						<jsp:useBean id="now" class="java.util.Date"/>
+						<fmt:formatDate var="today" value="${now}" pattern="yyyy-MM-dd"/>
+						<fmt:formatDate var="writeTime" value="${noticeDto.noticeDate}" pattern="yyyy-MM-dd"/>
+						<c:choose>
+						<c:when test="${today == writeTime}">
+							<fmt:formatDate value="${noticeDto.noticeDate}" pattern="hh:mm"/>
+						</c:when>
+						<c:otherwise>
+							${writeTime}
+						</c:otherwise>
+						</c:choose>
+					</td>
 					<td>${noticeDto.noticeRead}</td>
 				</tr>
 			</c:forEach>
 		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="5" align="right">
+					<a href="write">작성하기</a>
+				</td>
+			</tr>
+		</tfoot>
 	</table>
-	<form action="search" method="post">
-		<select>
-			<option value="noticeTitle">제목</option>
-			<option value="noticeContent">내용</option>
+	<form action="list" method="get">
+		<select name="type">
+			<option value="notice_title">제목</option>
+			<option value="notice_content">내용</option>
 		</select>
-		<input type="search">
+		<input type="search" name="keyword">
 		<button type="submit">찾기</button>
 	</form>
 	
