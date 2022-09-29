@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 
 @Data @NoArgsConstructor @AllArgsConstructor @Builder
 public class NoticeDto {
-	private String adminId, noticeContent, noticeHead;
+	private String adminId, noticeTitle, noticeContent, noticeHead;
 	private int noticeNo, noticeRead;
-	private Date noticeDate;
+	private Date noticeDate, noticeUpdate;
 }

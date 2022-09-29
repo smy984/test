@@ -14,6 +14,9 @@
 		</c:otherwise>
 	</c:choose>
 </title>
+
+<link rel="stylesheet" type="text/css" href="/css/commons.css">
+
 </head>
 <body>
 <div align="center">
