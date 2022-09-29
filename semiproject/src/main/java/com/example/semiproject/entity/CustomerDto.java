@@ -7,25 +7,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor @AllArgsConstructor
-@Builder
+@Data @NoArgsConstructor @AllArgsConstructor @Builder
 public class CustomerDto {
-	private String customerId;
-	private String customerPw;
-	private String customerPwcheck;
-	private String customerNick;
-	private String customerName;
-	private String customerPost;
-	private String customerHost;
-	private String customerDetailHost;
-	private String customerTel;
-	private String customerPhone;
-	private Date customerBirth;
-	private String customerEmail;
-	private int customerPoint;
-	private int customerMoney;
-	private String customerGrade;
-	private Date customerJoin;
-	private Date customerLogin;
+	private String customerId, customerPw, customerPwcheck, 
+			customerNick, customerName, customerPost, 
+			customerHost, customerDetailHost, customerTel, 
+			customerPhone, customerEmail, customerGrade;
+	private Date customerBirth, customerJoin, customerLogin;
+	private int customerPoint, customerMoney;
 }

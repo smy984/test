@@ -50,13 +50,19 @@ public class CustomerController {
 			HttpSession session) {
 		CustomerDto findDto = customerDao.selectOne(customerId);
 		
-		if(findDto != null) {
-			boolean isLogin = findDto.getCustomerPw().equals(customerPw);
-			if(isLogin) {
-				session.setAttribute("loginId", customerId);
-				customerDao.updateLogin(customerId);
-			}
+		if(findDto == null) {
+			return "redirect:login?error";
 		}
+		
+		boolean isLogin = findDto.getCustomerPw().equals(customerPw);
+		if(isLogin) {
+			session.setAttribute("loginId", customerId);
+			customerDao.updateLogin(customerId);
+		}
+		else {
+			return "redirect:login?error";
+		}
+		
 		return "redirect:/";
 	}
 	

@@ -4,7 +4,7 @@
 	<jsp:param value="회원가입" name="title"/>
 </jsp:include>
 
-<h1>&lt;JOIN US&gt;</h1>
+<h1>JOIN US</h1>
 
 <form action="join" method="post">
 <h3>기본정보</h3>

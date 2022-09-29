@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <jsp:include page="/WEB-INF/views/template/header.jsp">
 	<jsp:param value="로그인" name="title"/>
 </jsp:include>
 
-<h1>&lt;LOGIN&gt;</h1>
+<h1>LOGIN</h1>
 
 <br><br>
 <form action="login" method="post">
@@ -13,5 +14,9 @@
 	PASSWORD : <input name="customerPw" type="password" required><br><br><br>
 	<button type="submit">LOGIN</button>
 </form>
+
+<c:if test="${param.error != null}">
+	<h2 style=color:red>잘못된 입력입니다.</h2>
+</c:if>
 
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
