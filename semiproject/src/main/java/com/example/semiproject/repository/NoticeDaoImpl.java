@@ -66,7 +66,7 @@ public class NoticeDaoImpl implements NoticeDao{
 							+ "select * from notice order by notice_no desc"
 						+ ") tmp"
 					+ ") where rn between ? and ?";
-		Object[] param = {noticeListVO.startBlock(), noticeListVO.endBlock()};
+		Object[] param = {noticeListVO.startPrint(), noticeListVO.endPrint()};
 		return jdbcTemplate.query(sql, noticeMapper, param);
 	}
 	

@@ -25,12 +25,12 @@ public class NoticeListVO {
 	}
 	
 	public int startPrint() {//한 화면에 출력된 게시물의 첫 번째 번호
-		return endPrint() - (count - 1);
+		return endPrint() - (printCount - 1);
 	}
 	
 	public int endBlock() {//맨 마지막 페이징 번호
 		int value = startBlock() + blockSize - 1;
-		return Math.min(value, blockCount());
+		return Math.min(value, lastBlock());
 	}
 	
 	public int startBlock() {//한 화면에 출력된 페이징 첫 번째 번호
@@ -38,7 +38,7 @@ public class NoticeListVO {
 	}
 	
 	public int blockCount() {//총 페이징 개수
-		return count + (printCount - 1) / printCount;
+		return (count + (printCount - 1)) / printCount;
 	}
 	
 	public int preBlock() {//이전 눌렀을 때 나타날 번호

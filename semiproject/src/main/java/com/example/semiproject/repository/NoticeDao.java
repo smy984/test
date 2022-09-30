@@ -10,15 +10,15 @@ public interface NoticeDao {
 	int sequence();
 	void insert(NoticeDto noticeDto);
 	
-	//공지사항 리스트
-	List<NoticeDto> noticeBoard(NoticeListVO noticeListVO);
-	List<NoticeDto> list(NoticeListVO noticeListVO);
-	List<NoticeDto> search(NoticeListVO noticeListVO);
-	
 	//공지사항 페이징->검색 유무에 따른 총 게시물 수 파악 위함
 	int count(NoticeListVO noticeListVO);
 	int listCount(NoticeListVO noticeListVO);
 	int searchCount(NoticeListVO noticeListVO);
+	
+	//공지사항 리스트
+	List<NoticeDto> noticeBoard(NoticeListVO noticeListVO);
+	List<NoticeDto> list(NoticeListVO noticeListVO);
+	List<NoticeDto> search(NoticeListVO noticeListVO);
 	
 	//공지사항 상세보기
 	NoticeDto selectOne(int noticeNo);

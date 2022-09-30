@@ -67,14 +67,28 @@
 	</form>
 
 <!-- 페이징 -->
-	
-&lt;
- 
-<%-- <c:forEach var="i" begin="페이징 첫 번호" end="페이징 끝 번호" step="1"> --%>
-<%-- 	${i}  --%>
-<%-- </c:forEach> --%>
 
-&gt;
+<c:choose>
+	<c:when test="${vo.hasPrev()}">	
+		<a href="list?p=${vo.preBlock()}">&lt;</a>
+	</c:when>
+	<c:otherwise>
+		<a href="#">&lt;</a>
+	</c:otherwise>
+</c:choose>
+ 
+<c:forEach var="i" begin="${vo.startBlock()}" end="${vo.endBlock()}" step="1">
+	<a href="list?p=${i}">${i}</a> 
+</c:forEach>
+
+<c:choose>
+	<c:when test="${vo.hasNext()}">
+		<a href="list?p=${vo.nextBlock()}">&gt;</a>
+	</c:when>
+	<c:otherwise>
+		<a href="#">&gt;</A>
+	</c:otherwise>
+</c:choose>
 
 </div>
 
