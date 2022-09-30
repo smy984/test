@@ -23,8 +23,8 @@ public class NoticeController {
 	
 	@GetMapping("/list")
 	public String list(Model model, 
-			@ModelAttribute NoticeListVO noticeListvo) {
-		model.addAttribute("noticeList", noticeDao.noticeBoard(noticeListvo));
+			@ModelAttribute NoticeListVO noticeListVO) {
+		model.addAttribute("noticeList", noticeDao.noticeBoard(noticeListVO));
 		
 		return "notice/list";
 	}

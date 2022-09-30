@@ -9,7 +9,7 @@
 <form action="join" method="post">
 <h3>기본정보</h3>
 * 필수 입력 사항
-<table border="1" width="600">
+<table border="1" width="800">
 	<tbody>
 		<tr>
 			<th align="left">아이디 *</th>
@@ -33,10 +33,20 @@
 			</td>
 		</tr>
 		<tr>
+			<th align="left">비밀번호 찾기 질문</th>
+			<td>나의 보물 1호는?</td>
+		</tr>
+		<tr>
+			<th align="left">비밀번호 찾기 답변 *</th>
+			<td>
+				<input name="customerPwsearch" type="text" required>
+			</td>
+		</tr>
+		<tr>
 			<th align="left">닉네임 *</th>
 			<td>		
 				<input name="customerNick" type="text" required 
-							pattern="">
+							pattern="^[가-힣][가-힣0-9]{0,9}$">
 			</td>
 		</tr>
 		<tr>
@@ -51,12 +61,6 @@
 				<input name="customerPost" type="text" maxlength="6" size="6" placeholder="우편번호" required><br>
 				<input name="customerHost" type="text" placeholder="기본주소" required><br>
 				<input name="customerDetailHost" placeholder="상세주소" type="text">
-			</td>
-		</tr>
-		<tr>
-			<th align="left">일반전화</th>
-			<td>
-				<input name="customerTel" type="text">
 			</td>
 		</tr>
 		<tr>
@@ -76,12 +80,18 @@
 <br>
 <br>
 <h3>추가정보</h3>
-<table border="1" width="600">
+<table border="1" width="800">
 	<tbody>
 		<tr>
 			<th align="left">이메일</th>
 			<td>
 				<input name="customerEmail" type="text">
+			</td>
+		</tr>
+		<tr>
+			<th align="left">일반전화</th>
+			<td>
+				<input name="customerTel" type="text">
 			</td>
 		</tr>
 	</tbody>

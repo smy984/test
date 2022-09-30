@@ -18,9 +18,11 @@ class SemiprojectApplicationTests {
 	
 	@BeforeEach
 	void before() {
-		for(int i=1; i<=500; i++) {
+		for(int i=1; i<=99; i++) {
+			int noticeNo = noticeDao.sequence();
 			noticeDao.insert(NoticeDto.builder()
-										.adminId("test1")
+										.adminId("admin")
+										.noticeNo(noticeNo)
 										.noticeTitle("공지테스트"+i)
 										.noticeContent("공지글테스트"+i)
 										.noticeHead("긴급")
@@ -31,6 +33,7 @@ class SemiprojectApplicationTests {
 	
 	@Test
 	void contextLoads() {
+		System.out.println("입력끝");
 	}
 
 }

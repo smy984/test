@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 
 @Data @NoArgsConstructor @AllArgsConstructor @Builder
 public class CustomerDto {
-	private String customerId, customerPw, customerPwcheck, 
+	private String customerId, customerPw, customerPwcheck, customerPwsearch,
 			customerNick, customerName, customerPost, 
 			customerHost, customerDetailHost, customerTel, 
 			customerPhone, customerEmail, customerGrade;

@@ -30,13 +30,13 @@
 <a href="#">top</a>
 <a href="#">pants</a>
 <a href="#">acc</a>
-<a href="/member/join">회원가입</a>
-<a href="/member/login">로그인</a>
-<a href="/member/logout">로그아웃</a>
-<a href="/member/mypage">마이페이지</a>
+<a href="/member/join">JOIN US</a>
+<a href="/member/login">LOGIN</a>
+<a href="/member/logout">LOGOUT</a>
+<a href="/member/mypage">MYPAGE</a>
 	<input>
 	<button>search</button>
-<a href="#">장바구니</a>
+<a href="#">cart</a>
 </form>
 	
 </h2>

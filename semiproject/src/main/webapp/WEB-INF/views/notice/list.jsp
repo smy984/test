@@ -70,9 +70,9 @@
 	
 &lt;
  
-<c:forEach var="i" begin="페이징 첫 번호" end="페이징 끝 번호" step="1">
-	${i} 
-</c:forEach>
+<%-- <c:forEach var="i" begin="페이징 첫 번호" end="페이징 끝 번호" step="1"> --%>
+<%-- 	${i}  --%>
+<%-- </c:forEach> --%>
 
 &gt;
 

@@ -61,9 +61,13 @@ public class NoticeDaoImpl implements NoticeDao{
 	
 	@Override
 	public List<NoticeDto> list(NoticeListVO noticeListVO) {
-		String sql = "select * from notice order by notice_no desc";
-		
-		return jdbcTemplate.query(sql, noticeMapper);
+		String sql = "select * from ("
+						+ "select tmp.*, rownum rn from ("
+							+ "select * from notice order by notice_no desc"
+						+ ") tmp"
+					+ ") where rn between ? and ?";
+		Object[] param = {noticeListVO.startBlock(), noticeListVO.endBlock()};
+		return jdbcTemplate.query(sql, noticeMapper, param);
 	}
 	
 	@Override
@@ -89,6 +93,7 @@ public class NoticeDaoImpl implements NoticeDao{
 	@Override
 	public int listCount(NoticeListVO noticeListVO) {
 		String sql = "select count(*) from notice";
+		
 		return jdbcTemplate.queryForObject(sql, int.class);
 	}
 
@@ -98,6 +103,7 @@ public class NoticeDaoImpl implements NoticeDao{
 				+ "where instr(#1, ?) > 0";
 		sql = sql.replace("#1", noticeListVO.getType());
 		Object[] param = {noticeListVO.getKeyword()};
+		
 		return jdbcTemplate.queryForObject(sql, int.class, param);
 	}
 	

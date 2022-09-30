@@ -19,4 +19,7 @@
 	<h2 style=color:red>잘못된 입력입니다.</h2>
 </c:if>
 
+<a href="#">아이디/비밀번호 찾기 →</a><br><br>
+<a href="#">회원가입 →</a>
+
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
