@@ -4,4 +4,6 @@
 	<jsp:param value="상품추가" name="title"/>
 </jsp:include>
 
+
+
 <jsp:include page="/WEB-INF/views/template/adminFooter.jsp"></jsp:include>
