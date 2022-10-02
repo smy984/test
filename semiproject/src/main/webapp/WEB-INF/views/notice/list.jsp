@@ -8,7 +8,6 @@
 </jsp:include>
 
 
-
 <div class="container-1200 mt-40">
 
 	<div class="row center">
@@ -57,16 +56,16 @@
 			</tr>
 		</tfoot>
 	</table>
-	<form action="list" method="get">
-		<select name="type">
-			<option value="notice_title">제목</option>
-			<option value="notice_content">내용</option>
-		</select>
-		<input type="search" name="keyword">
-		<button type="submit">찾기</button>
-	</form>
-
+	
 <!-- 페이징 -->
+<c:choose>
+	<c:when test="${!vo.isFirst()}">
+		<a href="list?p=${vo.firstBlock()}">&laquo;</a>
+	</c:when>
+	<c:otherwise>
+		<a href="#">&laquo;</a>
+	</c:otherwise>
+</c:choose>
 
 <c:choose>
 	<c:when test="${vo.hasPrev()}">	
@@ -89,6 +88,24 @@
 		<a href="#">&gt;</A>
 	</c:otherwise>
 </c:choose>
+
+<c:choose>
+	<c:when test="${!vo.isLast()}">
+		<a href="list?p=${vo.lastBlock()}">&raquo;</a>
+	</c:when>
+	<c:otherwise>
+		<a href="#">&raquo;</A>
+	</c:otherwise>
+</c:choose>
+
+<form action="list" method="get">
+	<select name="type">
+		<option value="notice_title">제목</option>
+		<option value="notice_content">내용</option>
+	</select>
+	<input type="search" name="keyword">
+	<button type="submit">찾기</button>
+</form>
 
 </div>
 

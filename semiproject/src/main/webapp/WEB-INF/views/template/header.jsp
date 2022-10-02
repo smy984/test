@@ -33,6 +33,7 @@
 <a href="/member/join">JOIN US</a>
 <a href="/member/login">LOGIN</a>
 <a href="/member/logout">LOGOUT</a>
+<a href="/admin/">ADMINPAGE</a>
 <a href="/member/mypage">MYPAGE</a>
 	<input>
 	<button>search</button>
