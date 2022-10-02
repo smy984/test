@@ -9,8 +9,7 @@
 
 <br><br>
 <form action="login" method="post">
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : 
-	<input name="customerId" type="text" required><br><br><br>
+	ID : <input name="customerId" type="text" required><br><br><br>
 	PASSWORD : <input name="customerPw" type="password" required><br><br><br>
 	<button type="submit">LOGIN</button>
 </form>
@@ -20,6 +19,6 @@
 </c:if>
 
 <a href="#">아이디/비밀번호 찾기 →</a><br><br>
-<a href="#">회원가입 →</a>
+<a href="join">회원가입 →</a>
 
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>

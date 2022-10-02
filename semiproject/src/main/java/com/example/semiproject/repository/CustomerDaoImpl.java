@@ -99,4 +99,12 @@ public class CustomerDaoImpl implements CustomerDao{
 		jdbcTemplate.update(sql, param);
 	}
 	
+	@Override
+	public boolean delete(String customerId) {
+		String sql = "delete customer where customer_id=?";
+		Object[] param = {customerId};
+		
+		return jdbcTemplate.update(sql, param) > 0;
+	}
+	
 }

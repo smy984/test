@@ -5,7 +5,8 @@
 <hr>
 
 <div align="center">
-로그인 아이디 : ${loginId}
+로그인 아이디 : ${loginId}<br>
+로그인 등급 : ${loginCg}
 </div>
 <br>
 <div align="center">

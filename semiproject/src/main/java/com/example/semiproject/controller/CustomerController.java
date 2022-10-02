@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.example.semiproject.constant.SessionConstant;
 import com.example.semiproject.entity.CustomerDto;
@@ -57,6 +58,7 @@ public class CustomerController {
 		boolean isLogin = findDto.getCustomerPw().equals(customerPw);
 		if(isLogin) {
 			session.setAttribute("loginId", customerId);
+			session.setAttribute("loginCg", findDto.getCustomerGrade());
 			customerDao.updateLogin(customerId);
 		}
 		else {
@@ -69,6 +71,7 @@ public class CustomerController {
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
 		session.removeAttribute("loginId");
+		session.removeAttribute("loginCg");
 		return "redirect:login";
 	}
 	
@@ -79,5 +82,16 @@ public class CustomerController {
 		String loginId = (String)session.getAttribute(SessionConstant.ID);
 		model.addAttribute("dto", customerDao.selectOne(loginId));
 		return "member/mypage";
+	}
+	
+	@GetMapping("/delete")
+	public String delete(
+			@RequestParam String customerId, 
+			HttpSession session) {
+		session.removeAttribute("loginId");
+		session.removeAttribute("loginCg");
+		customerDao.delete(customerId);
+		
+		return "redirect:../";
 	}
 }

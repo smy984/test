@@ -2,6 +2,7 @@ package com.example.semiproject.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.stereotype.Repository;
 
 import com.example.semiproject.entity.ItemDto;
@@ -11,13 +12,53 @@ public class ItemDaoImpl implements ItemDao{
 	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
+	
+	@Override
+	public int sequence() {
+		String sql = "select item_seq.nextval from dual";
+		
+		return jdbcTemplate.queryForObject(sql, int.class);
+	}
 
 	@Override
-	public void isert(ItemDto itemDto) {
+	public void insert(ItemDto itemDto) {
 		String sql = "insert into item("
 				+ "item_no, cate_code, item_name, item_memo, "
-				+ "item_content, item_price, itme_color, item_size, "
-				+ "item_total_cnt) values()";
+				+ "item_content, item_price, item_color, item_size) "
+				+ "values(?,?,?,?,?,?,?,?)";
+		Object[] param = {itemDto.getItemNo(), itemDto.getCateCode(), itemDto.getItemName(), 
+						itemDto.getItemMemo(), itemDto.getItemContent(), 
+						itemDto.getItemPrice(), itemDto.getItemColor(), itemDto.getItemSize()};
+		jdbcTemplate.update(sql, param);
+	}
+	
+	private ResultSetExtractor<ItemDto> itemExtractor = (rs)->{
+		if(rs.next()) {
+			return ItemDto.builder()
+						.itemNo(rs.getInt("item_no"))
+						.cateCode(rs.getString("cate_code"))
+						.itemName(rs.getString("item_name"))
+						.itemMemo(rs.getString("item_memo"))
+						.itemContent(rs.getString("item_content"))
+						.itemPrice(rs.getInt("item_price"))
+						.itemColor(rs.getString("item_color"))
+						.itemSize(rs.getString("item_size"))
+						.itemTotalCnt(rs.getInt("item_total_cnt"))
+						.itemLikeCnt(rs.getInt("item_like_cnt"))
+						.itemBaskectCnt(rs.getInt("item_basket_cnt"))
+						.itemDate(rs.getDate("item_date"))
+					.build();
+		}
+		else {
+			return null;
+		}
+	};
+	
+	@Override
+	public ItemDto selectone(int itemNo) {
+		String sql = "select * from item where item_no=?";
+		Object[] param = {itemNo};
 		
+		return jdbcTemplate.query(sql, itemExtractor, param);
 	}
 }

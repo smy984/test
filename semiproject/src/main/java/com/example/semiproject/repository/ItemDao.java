@@ -3,5 +3,8 @@ package com.example.semiproject.repository;
 import com.example.semiproject.entity.ItemDto;
 
 public interface ItemDao {
-	void isert(ItemDto itemDto);
+	int sequence();
+	void insert(ItemDto itemDto);
+	
+	ItemDto selectone(int itemNo);
 }

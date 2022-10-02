@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 
 @Data @NoArgsConstructor @AllArgsConstructor @Builder
 public class ItemDto {
-	private int itemNo, itemPrice, itemSize, itemTotalCnt;
-	private String cateCode, itemName, itemMemo, itemContent, itemColor;
+	private int itemNo, itemPrice, itemTotalCnt, itemLikeCnt, itemBaskectCnt;
+	private String cateCode, itemName, itemMemo, itemContent, itemColor, itemSize;
 	private Date itemDate;
 }

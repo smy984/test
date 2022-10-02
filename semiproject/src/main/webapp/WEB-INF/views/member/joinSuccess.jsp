@@ -10,8 +10,7 @@
 가입 축하 선물 + 5,000p
 
 <h3>
-<a href="login">로그인 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&gt;</a>
+<a href="login">로그인 →</a>
 </h3>
 
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>

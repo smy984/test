@@ -39,9 +39,17 @@
 	<button>search</button>
 <a href="#">cart</a>
 </form>
-	
 </h2>
-</div>
 
 <hr>
+
+<c:if test="${loginCg == '관리자'}">
+
+<a href="/item/add">상품 추가</a>
+<hr>
+
+</c:if>
+
+</div>
+
 <div align="center" style="min-height:400px">

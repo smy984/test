@@ -13,5 +13,5 @@ public interface CustomerDao {
 
 	
 //	boolean update(CustomerDto customerDto);
-//	boolean delete(String customerId);
+	boolean delete(String customerId);
 }
