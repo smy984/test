@@ -6,7 +6,7 @@
 
 <h1>상품 추가</h1>
 
-<form action="add" method="post">
+<form action="add" method="post" enctype="multipart/form-data">
 <table border="1" width="700">
 	<tbody>
 		<tr>
@@ -80,7 +80,7 @@
 		<tr>
 			<th>첨부파일</th>
 			<td>
-				<input type="file" name="itmeImage" accept=".jpg, .png" required>
+				<input type="file" name="itemImage" accept=".jpg, .png" required>
 			</td>
 		</tr>
 		<tr>

@@ -2,8 +2,13 @@ package com.example.semiproject.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
-import org.springframework.beans.factory.annotation.Autowired;	
+import org.apache.commons.io.FileUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +21,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.semiproject.entity.ItemDto;
+import com.example.semiproject.error.TargetNotFoundException;
 import com.example.semiproject.repository.ItemDao;
 
 @Controller
@@ -52,24 +58,35 @@ public class ItemController {
 		return "redirect:detail";
 	}
 	
-//	@GetMapping("/detail")
-//	public String detail(
-//			Model model, 
-//			@RequestParam int itemNo) {
-//		model.addAttribute("itemDto", itemDao.selectone(itemNo));
-//		
-//		return "item/detail";
-//	}
-//	
-//	@GetMapping("/download")
-//	@ResponseBody
-//	public ResponseEntity<ByteArrayResource> douwnload(
-//			@RequestParam int itemNo) {
-//		File dir = new File(("user.home")+"/upload/item");
-//		File target = new File(dir, String.valueOf(itemNo));
-//		
-//		if(target.exists()) {
-//			byte[] data = FileUtils.
-//		}
-//	}
+	@GetMapping("/detail")
+	public String detail(
+			Model model, 
+			@RequestParam int itemNo) {
+		model.addAttribute("itemDto", itemDao.selectone(itemNo));
+		
+		return "item/detail";
+	}
+	
+	@GetMapping("/download")
+	@ResponseBody
+	public ResponseEntity<ByteArrayResource> download(
+			@RequestParam int itemNo) throws IOException {
+		File dir = new File(System.getProperty("user.home")+"/upload/item");
+		File target = new File(dir, String.valueOf(itemNo));
+		
+		if(target.exists()) {
+			byte[] data = FileUtils.readFileToByteArray(target);
+			ByteArrayResource resource = new ByteArrayResource(data);
+			
+			return ResponseEntity.ok()
+						.header(HttpHeaders.CONTENT_ENCODING, StandardCharsets.UTF_8.name())
+						.header("Content-Length", String.valueOf(data.length))
+						.header("Content-Type", "application/octet-stream")
+						.header("Content-Disposition", "attachment; filename="+itemNo)
+						.body(resource);
+		}
+		else {
+			throw new TargetNotFoundException("첨부파일 없음");
+		}
+	}
 }

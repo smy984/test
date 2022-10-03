@@ -9,7 +9,7 @@
 	<tbody>
 		<tr>
 			<td rowspan="5" width="40%">
-				
+				<img src="download?itemNo=${itemDto.itemNo}" width="320" height="420">
 			</td>
 			<td><h1>${itemDto.itemName}</h1></td>
 		</tr>
