@@ -14,4 +14,8 @@ public interface CustomerDao {
 	
 //	boolean update(CustomerDto customerDto);
 	boolean delete(String customerId);
+	
+	boolean findSession(String insertId, String answer);
+	
+	boolean reset(String insertId);
 }

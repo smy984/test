@@ -11,4 +11,5 @@ public interface ItemDao {
 	ItemDto selectone(int itemNo);
 	
 	List<ItemDto> recentList();
+	
 }

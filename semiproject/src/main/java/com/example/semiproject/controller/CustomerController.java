@@ -94,4 +94,27 @@ public class CustomerController {
 		
 		return "redirect:../";
 	}
+	
+	@GetMapping("/find")
+	public String find() {
+		return "member/find";
+	}
+	
+	@PostMapping("/find")
+	public String find(
+			@RequestParam String insertId, 
+			@RequestParam String answer) {
+		if(customerDao.findSession(insertId, answer)) {
+			customerDao.reset(insertId);
+			return "redirect:reset";
+		}
+		else {
+			return "redirect:find?error";
+		}
+	}
+	
+	@GetMapping("/reset")
+	public String reset() {
+		return "member/reset";
+	}
 }

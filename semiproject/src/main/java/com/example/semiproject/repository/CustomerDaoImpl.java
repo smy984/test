@@ -7,6 +7,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.example.semiproject.entity.CustomerDto;
+import com.example.semiproject.entity.ItemDto;
 
 @Repository
 public class CustomerDaoImpl implements CustomerDao{
@@ -64,6 +65,7 @@ public class CustomerDaoImpl implements CustomerDao{
 			customerDto.setCustomerId(rs.getString("customer_id"));
 			customerDto.setCustomerPw(rs.getString("customer_pw"));
 			customerDto.setCustomerPwcheck(rs.getString("customer_pwcheck"));
+			customerDto.setCustomerPwsearch(rs.getString("customer_pwsearch"));
 			customerDto.setCustomerNick(rs.getString("customer_nick"));
 			customerDto.setCustomerName(rs.getString("customer_name"));
 			customerDto.setCustomerPost(rs.getString("customer_post"));
@@ -103,6 +105,23 @@ public class CustomerDaoImpl implements CustomerDao{
 	public boolean delete(String customerId) {
 		String sql = "delete customer where customer_id=?";
 		Object[] param = {customerId};
+		
+		return jdbcTemplate.update(sql, param) > 0;
+	}
+	
+	@Override
+	public boolean findSession(String insertId, String answer) {
+		String sql = "select * from customer where customer_id=?";
+		Object[] param = {insertId};
+		CustomerDto findDto = jdbcTemplate.query(sql, customerExtractor, param);
+
+		return findDto.getCustomerPwsearch().equals(answer);
+	}
+	
+	@Override
+	public boolean reset(String insertId) {
+		String sql = "update customer set customer_pw='customer1234' where customer_id=?";
+		Object[] param = {insertId};
 		
 		return jdbcTemplate.update(sql, param) > 0;
 	}
