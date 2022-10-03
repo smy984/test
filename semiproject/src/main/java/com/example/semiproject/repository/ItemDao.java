@@ -1,5 +1,7 @@
 package com.example.semiproject.repository;
 
+import java.util.List;
+
 import com.example.semiproject.entity.ItemDto;
 
 public interface ItemDao {
@@ -7,4 +9,6 @@ public interface ItemDao {
 	void insert(ItemDto itemDto);
 	
 	ItemDto selectone(int itemNo);
+	
+	List<ItemDto> recentList();
 }

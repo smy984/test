@@ -20,7 +20,7 @@
 </head>
 <body>
 <div align="center">
-<h1 align="left"><a href="/">홈</a></h1>
+<h1 align="left"><a href="/">쇼핑몰명</a></h1>
 
 <h2>
 <form action="#" method="#">
@@ -30,10 +30,18 @@
 <a href="#">top</a>
 <a href="#">pants</a>
 <a href="#">acc</a>
-<a href="/member/join">JOIN US</a>
-<a href="/member/login">LOGIN</a>
-<a href="/member/logout">LOGOUT</a>
-<a href="/admin/">ADMINPAGE</a>
+<c:choose>
+	<c:when test="${loginId == null}">
+		<a href="/member/join">JOIN US</a>
+		<a href="/member/login">LOGIN</a>
+	</c:when>
+	<c:otherwise>
+		<a href="/member/logout">LOGOUT</a>
+	</c:otherwise>
+</c:choose>
+<c:if test="${loginCg == '관리자'}">
+	<a href="/admin/">ADMINPAGE</a>
+</c:if>
 <a href="/member/mypage">MYPAGE</a>
 	<input>
 	<button>search</button>
