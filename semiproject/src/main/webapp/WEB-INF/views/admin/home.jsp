@@ -8,7 +8,7 @@
 <table border="1" width="400">
 	<thead>
 		<tr>
-			<th colspan="3">상품등록 리스트</th>
+			<th colspan="3">신상품 리스트(최신순)</th>
 		</tr>
 		<tr>
 			<th>No.</th>
@@ -18,9 +18,9 @@
 	</thead>
 	<tbody>
 		<c:forEach var="itemDto" items="${itemList}">
-			<tr>
+			<tr align="center">
 				<td>${itemDto.itemNo}</td>
-				<td width="80%">${itemDto.itemName}</td>
+				<td align="left" width="80%">${itemDto.itemName}</td>
 				<td>
 					<a href="../item/detail?itemNo=${itemDto.itemNo}">→</a>
 				</td>
