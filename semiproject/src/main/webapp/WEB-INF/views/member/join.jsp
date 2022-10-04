@@ -17,7 +17,7 @@
 <div class="row right">
 	* 필수 입력 사항
 </div>
-<div class="row">
+<div class="row mb-50">
 <table class="table table-slit">
 	<tbody>
 		<tr>
@@ -98,7 +98,7 @@
 </table>
 </div>
 
-<div class="row left mt-40">
+<div class="row left mt-50 mb-40">
 	<h3>추가정보</h3>
 </div class="row">
 <table class="table table-slit">
