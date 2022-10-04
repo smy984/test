@@ -4,6 +4,8 @@
 	<jsp:param value="메인페이지" name="title"/>
 </jsp:include>
 
-<h1>쇼핑몰 메인페이지</h1>
+<div class="container-800">
+	<h1>쇼핑몰 메인페이지</h1>
+</div>
 
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
