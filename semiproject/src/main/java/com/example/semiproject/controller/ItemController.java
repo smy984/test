@@ -47,7 +47,8 @@ public class ItemController {
 		itemDao.insert(itemDto);
 		
 		if(!itemImage.isEmpty()) {
-			File dir = new File(System.getProperty("user.home")+"/upload/item");
+			File dir = new File("D:/upload/item");
+//			File dir = new File(System.getProperty("user.home")+"/upload/item");
 			dir.mkdirs();
 			File target = new File(dir, String.valueOf(itemNo));
 			itemImage.transferTo(target);
@@ -71,7 +72,8 @@ public class ItemController {
 	@ResponseBody
 	public ResponseEntity<ByteArrayResource> download(
 			@RequestParam int itemNo) throws IOException {
-		File dir = new File(System.getProperty("user.home")+"/upload/item");
+		File dir = new File("D:/upload/item");
+//		File dir = new File(System.getProperty("user.home")+"/upload/item");
 		File target = new File(dir, String.valueOf(itemNo));
 		
 		if(target.exists()) {

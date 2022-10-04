@@ -80,7 +80,7 @@
 		<tr>
 			<th>첨부파일</th>
 			<td>
-				<input type="file" name="itemImage" accept=".jpg, .png" required>
+				<input type="file" name="itemImage" accept=".jpg, .png">
 			</td>
 		</tr>
 		<tr>
