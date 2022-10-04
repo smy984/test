@@ -45,7 +45,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td>좋아요</td>
+			<td>${itemDto.itemLikeCnt}</td>
 			<td>
 				<button type="submit">buy</button>
 			</td>
