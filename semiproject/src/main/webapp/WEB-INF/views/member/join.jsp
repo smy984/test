@@ -93,12 +93,12 @@
 				<input class="input input-underline w-100" name="customerBirth" type="date" 
 							required autocomplete="off">
 			</td>
-		<tr>	
+		</tr>	
 	</tbody>
 </table>
 </div>
 
-<div class="row left mt-30">
+<div class="row left mt-40">
 	<h3>추가정보</h3>
 </div class="row">
 <table class="table table-slit">
