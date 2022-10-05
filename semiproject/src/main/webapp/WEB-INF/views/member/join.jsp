@@ -9,7 +9,6 @@
 <div class="row center">
 	<h1>JOIN US</h1>
 </div>
-
 <form action="join" method="post">
 <div class="row left">
 	<h3>기본정보</h3>
@@ -97,7 +96,6 @@
 	</tbody>
 </table>
 </div>
-
 <div class="row left mt-50 mb-40">
 	<h3>추가정보</h3>
 </div class="row">
@@ -120,11 +118,11 @@
 		</tr>
 	</tbody>
 </table>	
-
 <div class="row center mt-50 mb-50">
 	<button class="btn btn-neutral" type="submit">JOIN</button>
 </div>
 </form>
+
 </div>
 
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>

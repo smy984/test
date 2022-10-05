@@ -4,7 +4,7 @@
 	<jsp:param value="마이페이지" name="title"/>
 </jsp:include>
 
-<h1>&lt;MY PAGE&gt;</h1>
+<h1>MY PAGE</h1>
 
 <h3>쇼핑몰 가입정보</h3>
 
@@ -48,12 +48,6 @@
 			</td>
 		</tr>
 		<tr>
-			<th align="left">일반전화</th>
-			<td>
-				${dto.customerTel}
-			</td>
-		</tr>
-		<tr>
 			<th align="left">휴대전화</th>
 			<td>
 				${dto.customerPhone}
@@ -75,6 +69,12 @@
 		</tr>
 	</thead>
 	<tbody>
+		<tr>
+			<th align="left">일반전화</th>
+			<td>
+				${dto.customerTel}
+			</td>
+		</tr>
 		<tr>
 			<th align="left">이메일</th>
 			<td>

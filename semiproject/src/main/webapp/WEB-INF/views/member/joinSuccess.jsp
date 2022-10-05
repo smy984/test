@@ -4,13 +4,21 @@
 	<jsp:param value="회원가입" name="title"/>
 </jsp:include>
 
-<h1>&lt;JOIN US&gt;</h1>
+<div class="container-400 mt-40">
 
-<h3>회원가입을 축하드립니다!</h3>
-가입 축하 선물 + 5,000p
+<div class="row center">
+	<h1>JOIN US</h1>
+</div>
+<div class="row center">
+	<h3>회원가입을 축하드립니다!</h3>
+</div>
+<div class="row center">
+	가입 축하 선물 + 5,000p
+</div>	
+<div class="row center">
+	<h3><a href="login">로그인 →</a></h3>
+</div>
 
-<h3>
-<a href="login">로그인 →</a>
-</h3>
+</div>
 
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
