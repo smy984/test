@@ -73,11 +73,11 @@
 			<th valign="top" align="left">주소 *</th>
 			<td>
 				<input class="input input-underline" name="customerPost" type="text" 
-							maxlength="6" size="7" placeholder="우편번호" required><br>
+							maxlength="6" size="7" placeholder="우편번호" required autocomplete="off"><br>
 				<input class="input input-underline w-100" name="customerHost" type="text" 
-							placeholder="기본주소" required><br>
+							placeholder="기본주소" required autocomplete="off"><br>
 				<input class="input input-underline w-100" name="customerDetailHost" 
-							type="text" placeholder="상세주소">
+							type="text" placeholder="상세주소" autocomplete="off">
 			</td>
 		</tr>
 		<tr>
@@ -121,8 +121,9 @@
 	</tbody>
 </table>	
 
-<br><br>
-<button class="btn btn-neutral" type="submit">JOIN</button>
+<div class="row center mt-50 mb-50">
+	<button class="btn btn-neutral" type="submit">JOIN</button>
+</div>
 </form>
 </div>
 

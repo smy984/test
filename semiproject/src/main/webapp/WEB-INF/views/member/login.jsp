@@ -5,20 +5,40 @@
 	<jsp:param value="로그인" name="title"/>
 </jsp:include>
 
-<h1>LOGIN</h1>
+<div class="container-300 mt-40">
 
-<br><br>
+<div class="row center">
+	<h1>LOGIN</h1>
+</div>
+
 <form action="login" method="post">
-	ID : <input name="customerId" type="text" required><br><br><br>
-	PASSWORD : <input name="customerPw" type="password" required><br><br><br>
-	<button type="submit">LOGIN</button>
+<div class="row left">
+	<label>ID</label>
+	<input class="input w-100" name="customerId" type="text" required autocomplete="off">
+</div>
+<div class="row left">
+	<label>PASSWORD</label>
+	<input class="input w-100" name="customerPw" type="password" required autocomplete="off">
+</div>
+
+<div class="row center mt-50 mb-30">
+	<button class="btn btn-neutral" type="submit">LOGIN</button>
+</div>
 </form>
 
-<c:if test="${param.error != null}">
-	<h2 style=color:red>잘못된 입력입니다.</h2>
-</c:if>
+<div class="row center mb-30">
+	<a href="find">아이디/비밀번호 찾기 →</a>
+</div>
+<div class="row center mb-50">
+	<a href="join">회원가입 →</a>
+</div>
 
-<a href="find">아이디/비밀번호 찾기 →</a><br><br>
-<a href="join">회원가입 →</a>
+<div class="row center">
+	<c:if test="${param.error != null}">
+		<h3 style=color:darkred>잘못된 입력입니다.</h3>
+	</c:if>
+</div>
+	
+</div>
 
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>
