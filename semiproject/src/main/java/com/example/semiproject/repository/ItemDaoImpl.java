@@ -93,4 +93,14 @@ public class ItemDaoImpl implements ItemDao{
 		return jdbcTemplate.query(sql, itemMapper);
 	}
 	
+	@Override
+	public List<ItemDto> bestList() {
+		String sql = "select * from ("
+						+ "select tmp.*, rownum rn from("
+							+ "select * from item order by item_like_cnt desc"
+						+ ") tmp"
+					+ ") where rn between 1 and 3";
+		
+		return jdbcTemplate.query(sql, itemMapper);
+	}
 }

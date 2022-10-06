@@ -133,4 +133,10 @@ public class ItemController {
 		
 		return "redirect:detail";
 	}
+	
+	@GetMapping("/list")
+	public String list(Model model) {
+		model.addAttribute("itemList", itemDao.bestList());
+		return "item/list";
+	}
 }

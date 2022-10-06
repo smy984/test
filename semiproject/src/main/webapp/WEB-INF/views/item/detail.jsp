@@ -12,7 +12,7 @@
 	
 		<div class="float-left w-50">
 			<div class="row center">
-				<img src="download?itemNo=${itemDto.itemNo}" width="320" height="420">
+				<img class="w-100" src="download?itemNo=${itemDto.itemNo}">
 			</div>
 			<div class="row right">
 				<a href="like?itemNo=${itemDto.itemNo}">

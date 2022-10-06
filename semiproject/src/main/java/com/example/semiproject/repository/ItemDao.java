@@ -12,4 +12,6 @@ public interface ItemDao {
 	
 	List<ItemDto> recentList();
 	
+	List<ItemDto> bestList();
+	
 }

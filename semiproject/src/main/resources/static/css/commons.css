@@ -535,3 +535,17 @@ ul.pagination > li > a {
 .float-right{
     float: right;
 }
+
+.flex{
+	display: flex;
+	direction: row;
+}
+
+.flex > div{
+	flex-grow: 1;
+	margin: 10px;
+}
+
+a:hover{
+	cursor: pointer;
+}
