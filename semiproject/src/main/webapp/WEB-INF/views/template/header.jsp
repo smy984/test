@@ -23,7 +23,7 @@
 <link rel="stylesheet" type="text/css" href="/css/commons.css">
 <link rel="stylesheet" type="text/css" href="/css/layout.css">
 
-<!-- <link rel="stylesheet" type="text/css" href="/css/test.css"> -->
+<link rel="stylesheet" type="text/css" href="/css/test.css">
 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
 
@@ -112,5 +112,3 @@
 	</form>
 	
 </nav>
-
-<div align="center" style="min-height:400px">

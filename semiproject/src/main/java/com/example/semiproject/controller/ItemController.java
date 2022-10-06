@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
@@ -20,8 +22,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.semiproject.constant.SessionConstant;
+import com.example.semiproject.entity.CustomerLikeDto;
 import com.example.semiproject.entity.ItemDto;
 import com.example.semiproject.error.TargetNotFoundException;
+import com.example.semiproject.repository.CustomerLikeDao;
 import com.example.semiproject.repository.ItemDao;
 
 @Controller
@@ -30,6 +35,9 @@ public class ItemController {
 	
 	@Autowired
 	private ItemDao itemDao;
+	
+	@Autowired
+	private CustomerLikeDao likeDao;
 	
 	@GetMapping("/add")
 	public String add() {
@@ -62,8 +70,17 @@ public class ItemController {
 	@GetMapping("/detail")
 	public String detail(
 			Model model, 
+			HttpSession session, 
 			@RequestParam int itemNo) {
 		model.addAttribute("itemDto", itemDao.selectone(itemNo));
+		
+		String loginId = (String)session.getAttribute(SessionConstant.ID);
+		if(loginId != null) {
+			CustomerLikeDto likeDto = new CustomerLikeDto();
+			likeDto.setCustomerId(loginId);
+			likeDto.setItemNo(itemNo);
+			model.addAttribute("isLike", likeDao.check(likeDto));
+		}
 		
 		return "item/detail";
 	}
@@ -90,5 +107,30 @@ public class ItemController {
 		else {
 			throw new TargetNotFoundException("첨부파일 없음");
 		}
+	}
+	
+	@GetMapping("/like")
+	public String like(
+			@RequestParam int itemNo, 
+			HttpSession session, 
+			RedirectAttributes attr) {
+		String loginId = (String)session.getAttribute(SessionConstant.ID);
+		
+		CustomerLikeDto likeDto = new CustomerLikeDto();
+		likeDto.setCustomerId(loginId);
+		likeDto.setItemNo(itemNo);
+		
+		if(likeDao.check(likeDto)) {
+			likeDao.delete(likeDto);
+		}
+		else {
+			likeDao.insert(likeDto);
+		}
+		
+		likeDao.update(itemNo);
+		
+		attr.addAttribute("itemNo", itemNo);
+		
+		return "redirect:detail";
 	}
 }
