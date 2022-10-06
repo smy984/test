@@ -56,6 +56,7 @@ public class CustomerDaoImpl implements CustomerDao{
 		customerDto.setCustomerGrade(rs.getString("customer_grade"));
 		customerDto.setCustomerJoin(rs.getDate("customer_join"));
 		customerDto.setCustomerLogin(rs.getDate("customer_login"));
+		customerDto.setItemTotalCnt(rs.getInt("item_total_cnt"));
 		return customerDto;
 	};
 	
@@ -80,6 +81,7 @@ public class CustomerDaoImpl implements CustomerDao{
 			customerDto.setCustomerGrade(rs.getString("customer_grade"));
 			customerDto.setCustomerJoin(rs.getDate("customer_join"));
 			customerDto.setCustomerLogin(rs.getDate("customer_login"));
+			customerDto.setItemTotalCnt(rs.getInt("item_total_cnt"));
 			return customerDto;
 		}
 		else {
