@@ -111,7 +111,6 @@
 		</ul>
 	</form>
 	
-	<textarea rows="15" cols="65" maxlength="5"></textarea>
 </nav>
 
 <div align="center" style="min-height:400px">
