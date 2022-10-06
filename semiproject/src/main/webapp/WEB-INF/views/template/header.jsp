@@ -90,7 +90,9 @@
 				<li><a href="#">양말</a></li>
 			</ul>
 		</li>
-			<li  class="float-right"><a href="#">cart</a></li>
+			<li  class="float-right"><a href="#">
+				<i class="fa-solid fa-cart-shopping"></i>
+			</a></li>
 			<button class="float-right">search</button>
 			<input class="float-right">
 			<li class="float-right"><a href="/member/mypage">MYPAGE</a></li>
@@ -109,6 +111,7 @@
 		</ul>
 	</form>
 	
+	<textarea rows="15" cols="65" maxlength="5"></textarea>
 </nav>
 
 <div align="center" style="min-height:400px">

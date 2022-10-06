@@ -210,6 +210,11 @@ font-size: 16px;
     /* border: 1px solid black; */
 }
 
+.table a{
+	text-decoration: none;
+	color: black;
+}
+
 /* 
     방법 2 : .table부터 시작하는 모든경로를 제시하여 th와 td를 선택(자식선택자)
     부등호가 직계 자식을 선택한다는 뜻
@@ -407,7 +412,7 @@ ul.pagination > li > a {
 */
 .dropdown-menu > li{
     display: inline-block;
-    width: 90px;
+    width: 100px;
     position: relative;
     padding: 0.5em;
 }
@@ -446,7 +451,7 @@ ul.pagination > li > a {
     드롭다운메뉴 전체에 hover를 걸면 전체에 변경되는 설정
 */
 .dropdown-menu li:hover{
-    background-color: lightgray;
+/*     background-color: lightgray; */
 }
 
 /* 

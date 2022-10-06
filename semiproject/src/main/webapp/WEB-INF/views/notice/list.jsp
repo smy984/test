@@ -13,7 +13,7 @@
 	<div class="row center">
 		<h1>NOTICE</h1>
 	</div>
-	<table border="1" width="1200">
+	<table class="table table-hover table-slit">
 		<thead>
 			<tr>
 				<th width="5%">No.</th>
