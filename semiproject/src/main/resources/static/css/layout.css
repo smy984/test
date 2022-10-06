@@ -11,7 +11,7 @@ header{
     padding: 20px;
 }
 nav{
-
+	border-bottom: 1px solid gray;
 }
 aside{
     padding: 20px;

@@ -4,11 +4,17 @@
 	<jsp:param value="마이페이지" name="title"/>
 </jsp:include>
 
-<h1>MY PAGE</h1>
+<div class="container-800 mt-40">
 
-<h3>쇼핑몰 가입정보</h3>
+<div class="row center">
+	<h1>MY PAGE</h1>
+</div>
 
-<table border="1" width="600">
+<div class="row left">
+	<h3>쇼핑몰 가입정보</h3>
+</div>
+
+<table class="table table-slit">
 	<thead>
 		<tr>
 			<th colspan="2">필수정보</th>
@@ -62,7 +68,7 @@
 	</tbody>
 </table>
 <br>
-<table border="1" width="600">
+<table class="table table-slit">
 	<thead>
 		<tr>
 			<th colspan="2">추가정보</th>
@@ -88,7 +94,7 @@
 		</tr>
 	</tfoot>
 </table>
-<br>
-<br>
+</div>
+
 <a href="delete?customerId=${loginId}">탈퇴하기</a>
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>

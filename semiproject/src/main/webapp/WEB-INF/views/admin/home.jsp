@@ -5,6 +5,11 @@
 	<jsp:param value="관리자페이지" name="title"/>
 </jsp:include>
 
+<aside>
+	<a href="/item/add">상품 관리</a>
+	<a href="/member/list">회원 정보</a>
+</aside>
+
 <table border="1" width="400">
 	<thead>
 		<tr>
