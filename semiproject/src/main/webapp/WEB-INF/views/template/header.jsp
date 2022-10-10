@@ -38,7 +38,6 @@
 </div>
 
 <nav class="float-container">
-	<form action="#" method="#">
 	<ul class="dropdown-menu">
 		<li class="float-left"><a href="/item/list">BEST</a></li>
 		<li class="float-left"><a href="#">NEW 5%</a></li>
@@ -92,11 +91,13 @@
 				<li><a href="#">양말</a></li>
 			</ul>
 		</li>
-			<li  class="float-right"><a href="#">
+			<li class="float-right"><a href="#">
 				<i class="fa-solid fa-cart-shopping"></i>
 			</a></li>
-			<button class="float-right">search</button>
-			<input class="float-right">
+			<form action="#" method="#">
+				<button class="float-right btn-search" type="submit">search</button>
+				<input class="float-right find" name="#" id="search" placeholder="가을 신상">
+			</form>
 			<li class="float-right"><a href="/member/mypage">MYPAGE</a></li>
 		<c:if test="${loginCg == '관리자'}">
 			<li class="float-right"><a href="/admin/">ADMINPAGE</a></li>
@@ -111,7 +112,6 @@
 			</c:otherwise>
 		</c:choose>
 		</ul>
-	</form>
 	
 </nav>
 
