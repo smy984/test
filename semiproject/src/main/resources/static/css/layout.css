@@ -8,17 +8,15 @@ main{
     min-height: 400px;
 }
 header{
-    padding: 20px;
 }
 nav{
-	border-bottom: 1px solid gray;
+/* 	border-bottom: 1px solid #e1dcd5; */
 }
 aside{
     padding: 20px;
     float: left;
     width: 20%;
     min-height: 400px;
-    background-color: #F5F2EE;
 }
 section{
     padding: 20px;
@@ -27,5 +25,7 @@ section{
     min-height: 400px;
 }
 footer{
-    padding: 20px;
+/* 	background-color: #F7F5F3; */
+	border-top: 1px solid #e1dcd5;
+    padding: 40px;
 }

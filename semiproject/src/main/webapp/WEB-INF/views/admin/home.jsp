@@ -6,10 +6,10 @@
 </jsp:include>
 
 <aside>
-	<div class="row btn btn-neutral">
+	<div class="sidebar-menu row">
 		<a href="/item/add">상품 관리</a>
 	</div>
-	<div class="row">
+	<div class="sidebar-menu row">
 		<a href="/member/list">회원 정보</a>
 	</div>
 </aside>

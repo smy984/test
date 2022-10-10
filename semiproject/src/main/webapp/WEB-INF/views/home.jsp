@@ -4,8 +4,8 @@
 	<jsp:param value="메인페이지" name="title"/>
 </jsp:include>
 
-<div class="container-800 center mt-40">
-	<h1>쇼핑몰 메인페이지</h1>
+<div style="background-color:#F7F5F3; padding:200px 0;" class="center mb-50">
+	<span class="center">쇼핑몰 메인사진</span>
 </div>
 
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>

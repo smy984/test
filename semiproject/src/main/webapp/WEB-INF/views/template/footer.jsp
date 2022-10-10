@@ -2,92 +2,35 @@
     pageEncoding="UTF-8"%>
 </main>
 
+<footer>
 
-<hr>
+<div class="float-container">
 
-<div align="center">
-로그인 아이디 : ${loginId}<br>
-로그인 등급 : ${loginCg}
+<div class="float-left w-50">
+	<div class="row mb-20">쇼핑몰명</div>
+	<div class="row">사업장 번호 : 111-22-33333</div>
+	<div class="row">위치 : 서울특별시 영등포구 선유동2로 57 이레빌딩 19층 C강의장</div>
+	<div class="row">대표 번호 : 02)444-5555</div>
 </div>
-<br>
-<div align="center">
-<table width="1400">
-	<tbody>
-		<tr>
-		
-			<td align="center">
-			<table width="600">
-				<thead>
-					<tr>
-						<th align="left">쇼핑몰명</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>사업장 번호 : 111-22-33333</td>
-					</tr>
-					<tr>
-						<td>위치 : 서울특별시 영등포구 선유동2로 57 이레빌딩 19층 C강의장</td>
-					</tr>
-					<tr>
-						<td>대표 번호 : 02)444-5555</td>
-					</tr>
-				</tbody>
-			</table>
-			</td>
-			
-			<td align="center">
-			<table width="600">
-				<thead>
-					<tr>
-						<th colspan="2" align="left">고객센터</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td width="60%">
-						<table width="100%">
-							<thead>
-								<tr>
-									<th align="left">6666-7777</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>평일 10 ~ 18시 (점심 12 ~ 13시)</td>
-								</tr>
-								<tr>
-									<td>토요일, 공휴일 휴무</td>
-								</tr>
-							</tbody>
-						</table>
-						</td>
-						<td>
-						<table width="100%">
-							<thead>
-								<tr>
-									<th align="left">고객소통게시판</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>
-										<a href="/notice/list">공지사항</a>
-									</td>
-								</tr>
-								<tr>
-									<td>Q & A / 자주 묻는 질문</td>
-								</tr>
-							</tbody>
-						</table>
-					</tr>					
-				</tbody>
-			</table>
-			</td>
-		</tr>
-	</tbody>
-</table>
+<div class="float-left w-50">
+	<div class="row">고객센터</div>
+<div class="flex">
+	<div class="w-50">
+		<div class="row">6666-7777</div>
+		<div class="row">평일 10 ~ 18시 (점심 12 ~ 13시)</div>
+		<div class="row">토요일, 공휴일 휴무</div>
+	</div>
+	<div class="w-50">
+		<div class="row">고객소통게시판</div>
+		<div class="row"><a href="/notice/list">공지사항</a></div>
+		<div class="row">Q & A / 자주 묻는 질문</div>
+	</div>
 </div>
+</div>
+
+</div>
+
+</footer>
 
 </body>
 </html>

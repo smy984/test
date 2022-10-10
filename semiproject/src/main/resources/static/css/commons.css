@@ -2,9 +2,11 @@
 
 
 .logo{
-	text-decoration: none;
-	color: black;
-	padding: 0 10px;
+	padding: 20px 0 20px 20px;
+	margin: 0;
+	font-weight: border;
+	font-size: 30px;
+	display: block;
 }
 
  /* 
@@ -462,7 +464,7 @@ ul.pagination > li > a {
 }
 
 .dropdown-menu > li:hover > ul{
-	border-top: 1px solid gray;
+/* 	border-top: 1px solid #cec6bb; */
 }
 
 /* 
@@ -507,6 +509,14 @@ ul.pagination > li > a {
     right: 0;
 }
 
+.sidebar-menu{
+	width: 100%;
+	text-align: right;
+	font-size: 20px;
+	padding: 0.5em;
+	color: black;
+}
+
 /* 
     float 설정
     - float를 설정하면 현재 영역에서 left 혹은 right 방향에 붙는다.(ex 자석)
@@ -539,11 +549,11 @@ ul.pagination > li > a {
 .flex{
 	display: flex;
 	direction: row;
+	flex-wrap: wrap;
 }
 
 .flex > div{
 	flex-grow: 1;
-	margin: 10px;
 }
 
 a:hover{

@@ -49,6 +49,7 @@ q:before, q:after {
 *{
     box-sizing: border-box;
     text-decoration: none;
+    color: black;
 }
 
 html{

@@ -31,8 +31,10 @@
 </head>
 
 <body>
-<div class="row">
-	<h1><a class="logo left" href="/">쇼핑몰명</a></h1>
+<header>
+
+<div>
+	<span><a class="logo left" href="/">쇼핑몰명</a></span>
 </div>
 
 <nav class="float-container">
@@ -112,5 +114,7 @@
 	</form>
 	
 </nav>
+
+</header>
 
 <main>
