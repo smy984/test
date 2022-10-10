@@ -6,7 +6,7 @@
 </jsp:include>
 
 <aside>
-	<div class="row">
+	<div class="row btn btn-neutral">
 		<a href="/item/add">상품 관리</a>
 	</div>
 	<div class="row">
@@ -14,28 +14,36 @@
 	</div>
 </aside>
 
-<table border="1" width="400">
-	<thead>
-		<tr>
-			<th colspan="3">신상품 리스트(최신순)</th>
-		</tr>
-		<tr>
-			<th>No.</th>
-			<th>상품명</th>
-			<th>비고</th>
-		</tr>
-	</thead>
-	<tbody>
-		<c:forEach var="itemDto" items="${itemList}">
-			<tr align="center">
-				<td>${itemDto.itemNo}</td>
-				<td align="left" width="80%">${itemDto.itemName}</td>
-				<td>
-					<a href="../item/detail?itemNo=${itemDto.itemNo}">→</a>
-				</td>
+<section>
+<div class="float-container">
+<div class="float-left w-50">
+	<table class="table table-slit">
+		<thead>
+			<tr>
+				<th colspan="3">신상품 리스트(최신순)</th>
 			</tr>
-		</c:forEach>
-	</tbody>
-</table>
+			<tr>
+				<th>No.</th>
+				<th>상품명</th>
+				<th>비고</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="itemDto" items="${itemList}">
+				<tr align="center">
+					<td>${itemDto.itemNo}</td>
+					<td align="left" width="80%">${itemDto.itemName}</td>
+					<td width="10%">
+						<a href="../item/detail?itemNo=${itemDto.itemNo}">→</a>
+					</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+</div>
+<div class="float-left w-50">
+</div>
+</div>
+</section>
 
 <jsp:include page="/WEB-INF/views/template/footer.jsp"></jsp:include>

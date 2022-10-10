@@ -4,8 +4,8 @@
     홈페이지 레이아웃을 설정하는 스타일시트
 */
 main{
-    width: 1000px;
     margin: 0 auto;
+    min-height: 400px;
 }
 header{
     padding: 20px;
@@ -16,8 +16,9 @@ nav{
 aside{
     padding: 20px;
     float: left;
-    width: 25%;
+    width: 20%;
     min-height: 400px;
+    background-color: #F5F2EE;
 }
 section{
     padding: 20px;

@@ -25,6 +25,11 @@
 	<button class="btn btn-neutral" type="submit">LOGIN</button>
 </div>
 </form>
+<div class="row center mb-50"">
+	<c:if test="${param.error != null}">
+		<h3 style=color:darkred>잘못된 입력입니다.</h3>
+	</c:if>
+</div>
 
 <div class="row center mb-30">
 	<a href="find">아이디/비밀번호 찾기 →</a>
@@ -33,11 +38,6 @@
 	<a href="join">회원가입 →</a>
 </div>
 
-<div class="row center">
-	<c:if test="${param.error != null}">
-		<h3 style=color:darkred>잘못된 입력입니다.</h3>
-	</c:if>
-</div>
 	
 </div>
 

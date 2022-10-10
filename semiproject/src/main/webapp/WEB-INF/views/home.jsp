@@ -4,7 +4,7 @@
 	<jsp:param value="메인페이지" name="title"/>
 </jsp:include>
 
-<div class="container-800">
+<div class="container-800 center mt-40">
 	<h1>쇼핑몰 메인페이지</h1>
 </div>
 

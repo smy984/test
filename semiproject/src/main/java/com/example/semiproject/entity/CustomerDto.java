@@ -14,5 +14,5 @@ public class CustomerDto {
 			customerHost, customerDetailHost, customerTel, 
 			customerPhone, customerEmail, customerGrade;
 	private Date customerBirth, customerJoin, customerLogin;
-	private int customerPoint, customerMoney, itemCnt;
+	private int customerPoint, customerMoney, itemTotalCnt;
 }
